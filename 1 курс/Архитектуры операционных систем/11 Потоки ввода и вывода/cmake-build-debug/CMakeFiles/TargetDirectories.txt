@@ -1,0 +1,3 @@
+/home/vitaly/Documents/GitHub/SynergyLearning/1 курс/Архитектуры операционных систем/11 Потоки ввода и вывода/cmake-build-debug/CMakeFiles/11____.dir
+/home/vitaly/Documents/GitHub/SynergyLearning/1 курс/Архитектуры операционных систем/11 Потоки ввода и вывода/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vitaly/Documents/GitHub/SynergyLearning/1 курс/Архитектуры операционных систем/11 Потоки ввода и вывода/cmake-build-debug/CMakeFiles/rebuild_cache.dir
