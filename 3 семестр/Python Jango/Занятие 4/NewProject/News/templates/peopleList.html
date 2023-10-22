@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+        {% for item in people %}
+            <div>
+                <p>fristName - {{ item.firstName }}</p>
+                <p>surnameName - {{ item.surnameName }}</p>
+                <p>middleName - {{ item.middleName }}</p>
+                <p>old - {{ item.old }}</p>
+                <p>birthDay - {{ item.birthDay }}</p>
+                <p>professions - {{ item.professions }}</p>
+            </div>
+        <hr>
+        {% endfor %}
+    </body>
+</html>
