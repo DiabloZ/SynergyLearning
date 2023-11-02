@@ -1,0 +1,12 @@
+pip install django
+pip install --upgrade pip
+django-admin startproject NewProject
+python manage.py startapp News
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+admin
+admin
