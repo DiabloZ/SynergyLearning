@@ -15,7 +15,7 @@
 <div class="card mb-3">
     {{ forloop.counter }}
     <div class="card-header">
-        Категория: <a href="{% url 'Category' item.category.pk %}"> {{ item.category.title }} </a>
+        Категория: <a href="{{ item.category.get_absolute_url }}"> {{ item.category.title }} </a>
     </div>
     <div class="media" style="display:flex">
         <div class="media-photo">
@@ -32,7 +32,7 @@
                 </h5>
                 {% autoescape off %}
                 <p class="card-text">{{ item.content|truncatewords:60|linebreaks }}</p>
-                <a href="#" class="btn btn-primary">Read more...</a>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Read more...</a>
                 {% endautoescape off %}
             </div>
         </div>
