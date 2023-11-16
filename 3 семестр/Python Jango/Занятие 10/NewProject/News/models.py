@@ -41,6 +41,9 @@ class Human(models.Model):
     profession = models.ForeignKey('Profession', on_delete=models.PROTECT, null=True, verbose_name="Профессия")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", blank=True)
 
+    def get_absolute_url(self):
+        return reverse_lazy('View_person', kwargs={'person_id': self.pk})
+
     class Meta:
         verbose_name = "Человек"
         verbose_name_plural = "Люди"
@@ -49,6 +52,9 @@ class Human(models.Model):
 
 class Profession(models.Model):
     title = models.CharField(max_length=150, db_index=True, verbose_name="Профессия")
+
+    def get_absolute_url(self):
+        return reverse_lazy('Profession', kwargs={'profession_id': self.pk})
 
     class Meta:
         verbose_name = "Профессия"

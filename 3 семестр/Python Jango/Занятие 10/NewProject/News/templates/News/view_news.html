@@ -12,7 +12,6 @@
 {% block content %}
 
     <div class="card mb-3">
-        {{ forloop.counter }}
         <div class="card-header">
             Категория: <a href="{{ news_item.category.get_absolute_url }}"> {{ news_item.category.title }} </a>
         </div>

@@ -32,6 +32,14 @@ def view_news(request, news_id):
     return render(request, 'News/view_news.html', context=context)
 
 
+def view_person(request, person_id):
+    person_item = get_object_or_404(Human, pk=person_id)
+    context = {
+        'person_item': person_item
+    }
+    return render(request, 'People/view_person.html', context=context)
+
+
 def human(request):
     people = Human.objects.all()
     context = {
