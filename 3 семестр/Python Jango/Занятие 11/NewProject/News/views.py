@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 
-from .forms import NewsForm
+from .forms import NewsForm, PersonForm
 from .models import News, Category, Profession
 from .models import Human
 
@@ -70,3 +69,14 @@ def get_profession(request, profession_id):
         'profession': profession
     }
     return render(request, 'People/profession.html', context=context)
+
+
+def add_person(request):
+    if request.method == 'POST':
+        form = PersonForm(request.POST)
+        if form.is_valid():
+            news = form.save()
+            return redirect(news)
+    else:
+        form = PersonForm()
+    return render(request, 'People/add_person.html', context={"form": form})
