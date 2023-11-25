@@ -5,7 +5,7 @@
     {% get_list_professions as professions %}
     {% for prof in professions %}
     <a href="{{ prof.get_absolute_url }}" class="list-group-item list-group-item-action">
-        {{ prof.title }}
+        {{ prof.title }} <span class="badge bg-primary rounded-pill">14</span>
     </a>
     {% endfor %}
 </div>

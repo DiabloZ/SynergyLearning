@@ -1,6 +1,3 @@
 {% load news_tags %}
-
-<div class="list-group">
-    {{ arg1 }} {{ arg2 }}
-    {% show_categories %}
-</div>
+{% get_list_categories as categories %}
+{% show_categories %}
