@@ -42,7 +42,7 @@ class Human(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Время создания", blank=True)
 
     def get_absolute_url(self):
-        return reverse_lazy('View_person', kwargs={'person_id': self.pk})
+        return reverse_lazy('View_person', kwargs={'pk': self.pk})
 
     class Meta:
         verbose_name = "Человек"

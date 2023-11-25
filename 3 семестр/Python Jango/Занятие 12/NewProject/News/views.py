@@ -5,6 +5,7 @@ from .forms import NewsForm, PersonForm
 from .models import News, Category, Profession
 from .models import Human
 
+
 class HomeNews(ListView):
     model = News
     context_object_name = 'news'
@@ -47,39 +48,37 @@ class AddNews(CreateView):
     template_name = "News/add_news.html"
 
 
-def view_person(request, person_id):
-    person_item = get_object_or_404(Human, pk=person_id)
-    context = {
-        'person_item': person_item
-    }
-    return render(request, 'People/view_person.html', context=context)
+class PeopleList(ListView):
+    model = Human
+    context_object_name = "people"
+    template_name = "People/peopleList.html"
+    extra_context = {'title': "Список людей"}
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = "Список людей"
+        return context
 
 
-def human(request):
-    people = Human.objects.all()
-    context = {
-        'people': people,
-        'title': "Список людей"
-    }
-    return render(request, 'People/peopleList.html', context)
+class PeopleByProfession(ListView):
+    model = Human
+    context_object_name = "people"
+    template_name = "People/peopleList.html"
+    allow_empty = False
+    extra_context = {'title': "Профессии"}
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = Profession.objects.get(pk=self.kwargs['profession_id']).title
+        return context
 
 
-def get_profession(request, profession_id):
-    people = Human.objects.filter(profession_id=profession_id)
-    profession = Profession.objects.get(pk=profession_id)
-    context = {
-        'people': people,
-        'profession': profession
-    }
-    return render(request, 'People/profession.html', context=context)
+class ViewPerson(DetailView):
+    model = Human
+    context_object_name = "person_item"
+    template_name = "People/view_person.html"
 
 
-def add_person(request):
-    if request.method == 'POST':
-        form = PersonForm(request.POST)
-        if form.is_valid():
-            news = form.save()
-            return redirect(news)
-    else:
-        form = PersonForm()
-    return render(request, 'People/add_person.html', context={"form": form})
+class AddPerson(CreateView):
+    form_class = PersonForm
+    template_name = "People/add_person.html"

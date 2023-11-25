@@ -15,31 +15,29 @@
     <div class="card-header">
         Профессия: <a href="{{ person_item.profession.get_absolute_url }}"> {{ person_item.profession.title }} </a>
     </div>
-    <div class="media" style="display:flex">
-        <div class="media-photo">
+
+        <div class="card-body">
             {% if person_item.photo %}
             <img src="{{ person_item.photo.url }}" class="mr-3" width="350" alt="Photo">
             {% else %}
             <h6>Фото нет</h6>
             {% endif %}
         </div>
-        <div class="media-body">
-            <div class="card-body">
-                <h5 class="card-title">
-                    {{ person_item.title }}
-                </h5>
-                {% autoescape off %}
-                <p class="card-text {% cycle 'text-success' 'text-primary' %}">
-                    fristName - {{ person_item.firstName|truncatewords:1}} </p>
-                {% endautoescape off %}
-                <p class="card-text">surnameName - {{ person_item.surnameName|truncatewords:1 }}</p>
-                <p class="card-text">middleName - {{ person_item.middleName|truncatewords:1 }}</p>
-                <p class="card-text">old - {{ person_item.old }}</p>
-                <p class="card-text">birthDay - {{ person_item.birthDay }}</p>
-                <a href="{{ person_item.get_absolute_url }}" class="btn btn-primary">Read more...</a>
-            </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                {{ person_item.title }}
+            </h5>
+            {% autoescape off %}
+            <p class="card-text {% cycle 'text-success' 'text-primary' %}">
+                fristName - {{ person_item.firstName|truncatewords:1}} </p>
+            {% endautoescape off %}
+            <p class="card-text">surnameName - {{ person_item.surnameName|truncatewords:1 }}</p>
+            <p class="card-text">middleName - {{ person_item.middleName|truncatewords:1 }}</p>
+            <p class="card-text">old - {{ person_item.old }}</p>
+            <p class="card-text">birthDay - {{ person_item.birthDay }}</p>
+            <a href="{{ person_item.get_absolute_url }}" class="btn btn-primary">Read more...</a>
         </div>
-    </div>
+
     <div class="card-footer text-muted">
         {{ person_item.created_at|date:'Y-m-d H:i' }}
     </div>
