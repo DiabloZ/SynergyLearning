@@ -50,7 +50,7 @@ class AddNews(CreateView):
 
 class PeopleList(ListView):
     model = Human
-    context_object_name = "people"
+    context_object_name = 'people'
     template_name = "People/peopleList.html"
     extra_context = {'title': "Список людей"}
 
@@ -62,7 +62,7 @@ class PeopleList(ListView):
 
 class PeopleByProfession(ListView):
     model = Human
-    context_object_name = "people"
+    context_object_name = 'people'
     template_name = "People/peopleList.html"
     allow_empty = False
     extra_context = {'title': "Профессии"}
