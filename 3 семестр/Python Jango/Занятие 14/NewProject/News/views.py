@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import NewsForm, PersonForm
 from .models import News, Category, Profession
@@ -46,6 +47,7 @@ class ViewNews(DetailView):
 class AddNews(CreateView):
     form_class = NewsForm
     template_name = "News/add_news.html"
+    login_url = "/admin/"
 
 
 class PeopleList(ListView):
@@ -82,3 +84,4 @@ class ViewPerson(DetailView):
 class AddPerson(CreateView):
     form_class = PersonForm
     template_name = "People/add_person.html"
+    login_url = "/admin/"

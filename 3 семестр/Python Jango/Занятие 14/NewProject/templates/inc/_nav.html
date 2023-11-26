@@ -10,15 +10,19 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{% url 'Home' %}">Главная</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Add_news' %}">Добавить новость</a>
-                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Add_news' %}">Добавить новость</a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'People' %}">Люди</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'Add_person' %}">Добавить персону</a>
-                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Add_person' %}">Добавить персону</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
