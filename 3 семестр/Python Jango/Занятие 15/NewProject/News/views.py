@@ -12,6 +12,7 @@ class HomeNews(ListView):
     context_object_name = 'news'
     template_name = 'News/home_news_list.html'
     extra_context = {'title': "Главная"}
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -28,6 +29,7 @@ class NewsByCategory(ListView):
     context_object_name = 'news'
     allow_empty = False
     extra_context = {'title': "Категории"}
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -55,6 +57,7 @@ class PeopleList(ListView):
     context_object_name = 'people'
     template_name = "People/peopleList.html"
     extra_context = {'title': "Список людей"}
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -68,6 +71,7 @@ class PeopleByProfession(ListView):
     template_name = "People/peopleList.html"
     allow_empty = False
     extra_context = {'title': "Профессии"}
+    paginate_by = 2
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
