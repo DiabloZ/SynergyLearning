@@ -27,7 +27,11 @@
         </div>
     </div>
     <span class="navbar-text">
-        <a href="{% url 'Register' %}">Регистрация</a> |
-        <a href="{% url 'Login' %}">Логин</a>
+        {% if request.user.is_authenticated %}
+            !!!, {{ user.username }} | <a href="{% url 'Logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'Register' %}">Регистрация</a> |
+            <a href="{% url 'Login' %}">Логин</a>
+        {% endif %}
     </span>
 </nav>
