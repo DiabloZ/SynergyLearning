@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -5,6 +7,24 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import NewsForm, PersonForm
 from .models import News, Category, Profession
 from .models import Human
+
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Успешно")
+            return redirect('Login')
+        else:
+            messages.error(request, "Не успешно")
+    else:
+        form = UserCreationForm()
+    return render(request, 'Auth/register.html', {'form': form})
+
+
+def login(request):
+    return render(request, 'Auth/login.html')
 
 
 class HomeNews(ListView):
