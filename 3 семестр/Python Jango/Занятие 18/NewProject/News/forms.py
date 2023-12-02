@@ -1,3 +1,4 @@
+from captcha.fields import CaptchaField
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
@@ -25,6 +26,7 @@ class UserRegisterForm(UserCreationForm):
         label="Пароль",
         widget=forms.PasswordInput(attrs={'class': 'form-control'})
     )
+    captcha = CaptchaField()
 
     class Meta:
         model = User

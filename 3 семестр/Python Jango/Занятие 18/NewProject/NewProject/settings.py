@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "debug_toolbar",
+    "ckeditor",
+    "ckeditor_uploader",
+    "captcha",
     'News',
     'Other',
 ]
@@ -136,3 +139,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = os.path.join(BASE_DIR, "/media/")
 MEDIA_ROOT = "/media/"
+
+CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
