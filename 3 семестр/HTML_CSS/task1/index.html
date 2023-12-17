@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container row">
+      <div class="logo">
+        Стажировки в <strong>IT</strong>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#vac">Вакансии</a></li>
+          <li><a href="#cond">Условия</a></li>
+          <li><a href="#req">Требования</a></li>
+        </ul>
+      </nav>
+      <div class="header-button">
+        <a href="#form">Подать заявку</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <section class="hero">
+        <h1>Стажировка в одной из лучших IT-компаний России</h1>
+      </section>
+      <section id="vac" class="vacant">
+        <h2>Вакансии</h2>
+        <ul>
+          <li>Frontend</li>
+          <li>Backend</li>
+          <li>Мобильная разработка</li>
+          <li>DevOps</li>
+          <li>Анализ данных</li>
+          <li>Машинное обучение</li>
+        </ul>
+      </section>
+      <section id="cond" class="cond">
+        <h2>Условия</h2>
+        <table>
+          <thead>
+            <th></th>
+            <th>Стажировка в течение года</th>
+            <th>Стажировка летняя</th>
+            <th>Погружение: интенсивная стажировка</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Формат работы</th>
+              <td colspan="2">✔ Очно или Дистанционно</td>
+              <td>✔ Очно</td>
+            </tr>
+            <tr>
+              <th>Дата начала</th>
+              <td>✔ Каждый месяц</td>
+              <td>✔ Май</td>
+              <td>✔ Февраль, Август</td>
+            </tr>
+            <tr>
+              <th>Оплата проезда</th>
+              <td colspan="3">✔ Да</td>
+            </tr>
+            <tr>
+              <th>Оплата проживания</th>
+              <td>✕ Нет</td>
+              <td colspan="2">✔ Да</td>
+            </tr>
+            <tr>
+              <th>Занятость</th>
+              <td colspan="2">✔ Гибкий график от 20 до 40 часов в неделю</td>
+              <td>✔ Полная 5/2</td>
+            </tr>
+            <tr>
+              <th>Продолжительность</th>
+              <td>✔ от 3 до 6 меясцев</td>
+              <td>✔ 3 месяца</td>
+              <td>✔ 1 месяц</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <th>Оплата</th>
+            <th colspan="2">до 50 000 ₽</th>
+            <th>до 100 000 ₽</th>
+          </tfoot>
+        </table>
+      </section>
+      <section id="req" class="req">
+        <h2>Требования</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti commodi <strong>iure repellendus harum laborum facilis</strong> fuga totam recusandae, eaque iste voluptas error libero quam vitae eligendi perspiciatis fugit veniam distinctio velit sed qui nobis adipisci unde. Quae tempora magni <a href="">architecto</a> possimus deserunt dolorum, voluptatum veniam iure impedit sed cupiditate, sit repellendus ipsum placeat magnam quibusdam, perferendis iusto natus facere fugit. Ipsam tempore aliquid inventore officiis quia, similique, consequatur harum explicabo, commodi laborum dolores est dignissimos quasi assumenda rem? Delectus at voluptatum voluptatem nemo officia labore. Eius officiis sunt quod! Quisquam dolorum, fuga <em>quidem magni voluptatem praesentium</em> necessitatibus quod numquam repudiandae?</p>
+      </section>
+      <section id="form" class="form">
+        <h2>Подать заявку</h2>
+        <form action="" method="get">
+  
+          <label for="city">Ваш город</label>
+          <select name="city" id="city">
+            <option value="">--Выберите город--</option>
+            <option value="moscow">Москва</option>
+            <option value="saintpetersburg">Санк-Петербург</option>
+            <option value="kazan">Казань</option>
+            <option value="nnovgorod">Нижний Новгород</option>
+          </select>
+
+          <label for="napr">Направление</label>
+          <select name="napr" id="napr">
+            <option value="">--Выберите направление--</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Мобильная разработка">Мобильная разработка</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Анализ данных">Анализ данных</option>
+            <option value="Машинное обучение">Машинное обучение</option>
+          </select>
+    
+          <label for="name">Имя</label>
+          <input type="text" id="name" required>
+    
+          <label for="surname">Фамилия</label>
+          <input type="text" id="surname" required>
+    
+          <label for="mail">Email</label>
+          <input type="email" id="mail" required>
+    
+          <label for="tel">Телефон</label>
+          <input type="tel" id="tel" required>
+    
+          <label for="education">Уровень вашего образования</label>
+          <fieldset>
+            <label>
+              <input type="checkbox"  value="Среднее общее">
+              Среднее общее
+            </label>
+            <label>
+              <input type="checkbox" value="Среднее профессиональное">
+              Среднее профессиональное
+            </label>
+            <label>
+              <input type="checkbox" value="Высшее">
+              Высшее
+            </label>
+          </fieldset>
+  
+          <label for="social">Ссылка на соц. сети</label>
+          <input type="url" id="social" required>
+    
+          <label for="desc">Ваш опыт</label>
+          <textarea name="desc" autocomplete="off" id="desc" cols="30" rows="10" placeholder="Расскажите о себе"></textarea>
+    
+          <button type="reset">Сбросить</button>
+          <button type="submit">Отправить</button>
+    
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container row">
+      <div class="logo">
+        Стажировки в <strong>IT</strong>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi aliquid totam excepturi placeat. Mollitia, amet odit error exercitationem ullam quisquam, voluptatem quis laboriosam quia dolores pariatur, dignissimos totam id eius!</p>
+    </div>
+  </footer>
+</body>
+</html>

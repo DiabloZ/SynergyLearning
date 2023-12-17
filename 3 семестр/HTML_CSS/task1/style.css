@@ -1,0 +1,28 @@
+.container {
+  margin: 0 auto;
+  width: 70vw;
+}
+.row {
+  display: flex;
+  justify-content:space-evenly;
+}
+header ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header li {
+  list-style-type: none;
+  padding: 0px 10px;
+}
+section {
+  padding: 50px 0;
+}
+footer {
+  padding-top: 300px;
+}
+td {
+  font-size: 18px;
+  padding: 20px 40px;
+  background: rgb(170, 255, 0);
+}
