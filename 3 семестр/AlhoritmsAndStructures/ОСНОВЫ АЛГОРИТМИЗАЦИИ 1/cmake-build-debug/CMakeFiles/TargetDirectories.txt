@@ -1,0 +1,3 @@
+/home/vitaly/Documents/GitHub/SynergyLearning/3 семестр/AlhoritmsAndStructures/ОСНОВЫ АЛГОРИТМИЗАЦИИ 1/cmake-build-debug/CMakeFiles/__1.dir
+/home/vitaly/Documents/GitHub/SynergyLearning/3 семестр/AlhoritmsAndStructures/ОСНОВЫ АЛГОРИТМИЗАЦИИ 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vitaly/Documents/GitHub/SynergyLearning/3 семестр/AlhoritmsAndStructures/ОСНОВЫ АЛГОРИТМИЗАЦИИ 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
