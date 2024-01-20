@@ -1,4 +1,5 @@
 #include <iostream>
+#include "TestSorting.h"
 
 int sum2(int n) {
     return (1 + n) * n / 2;
@@ -15,10 +16,8 @@ int sum1(int n) {
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-    cout << sum1(n) << endl;
-    cout << sum2(n) << endl;
+    TestSorting test;
+    test.testSorting();
 }
 
 
