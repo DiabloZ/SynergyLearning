@@ -44,6 +44,38 @@ void sort_merge(vector<T> &v) {
     merge_sort(v, 0, v.size() - 1);
 }
 
+template<class T>
+void fast_sort(vector<T>& v, size_t l, size_t r);
+
+template<class T>
+void fast_sort(vector<T>& v, size_t l, size_t r) {
+    if (l >= r) return;
+    size_t sz = r - l + 1;
+    size_t m = l + rand() % sz;
+    vector<T> lb, rb, mb;
+    for (size_t i = l; i <= r; ++i) {
+        T& val = v[i];
+        if (val < v[m]) lb.push_back(val);
+        else if (val > v[m]) rb.push_back(val);
+        else mb.push_back(val);
+    }
+    copy(lb.begin(), lb.end(), v.begin() + l);
+    copy(mb.begin(), mb.end(), v.begin() + l + lb.size());
+    copy(rb.begin(), rb.end(), v.begin() + l + lb.size() + mb.size());
+
+    if (l + lb.size() > l + 1) {
+        fast_sort(v, l, l + lb.size() - 1);
+    }
+    if (r - rb.size() + 1 < r) {
+        fast_sort(v, r - rb.size() + 1, r);
+    }
+}
+
+template<class T>
+void sort_fast(vector<T>& v) {
+    fast_sort(v, 0, v.size() - 1);
+}
+
 class TestSorting {
 public:
     static void testSorting() {
@@ -76,6 +108,18 @@ public:
             assert(v2 == expected_v2);
             assert(v3 == expected_v3);
             cout << "Merge passed tests\n";
+        }
+        {
+            vector<float> v1 = _v1;
+            vector<int> v2 = _v2;
+            vector<int> v3 = _v3;
+            sort_fast(v1);
+            sort_fast(v2);
+            sort_fast(v3);
+            assert(v1 == expected_v1);
+            assert(v2 == expected_v2);
+            assert(v3 == expected_v3);
+            cout << "Fast sort passed tests\n";
         }
     }
 };
