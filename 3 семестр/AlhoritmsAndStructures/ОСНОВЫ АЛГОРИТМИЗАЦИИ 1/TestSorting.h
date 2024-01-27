@@ -76,6 +76,30 @@ void sort_fast(vector<T>& v) {
     fast_sort(v, 0, v.size() - 1);
 }
 
+template<class T>
+void sort_count(vector<T>& v, size_t sz) {
+    vector<size_t> counters (sz * 2, 0);
+    for (T& val : v) {
+        counters[abs(val) + (sz - 1) * (val < 0)]++;
+    }
+    size_t uk = 0;
+    for (size_t i = sz * 2 - 1; i >= sz; --i) {
+        T val = -((int)i - (int)sz + 1);
+        for (size_t j = 0; j < counters[i]; ++j) {
+            v[uk] = val;
+            uk++;
+        }
+    }
+    for (size_t i = 0; i < sz; ++i) {
+        T val = i;
+        if (i > sz - 1) val = -(val - (int) sz + 1);
+        for (size_t j = 0; j < counters[i]; ++j) {
+            v[uk] = val;
+            uk++;
+        }
+    }
+}
+
 class TestSorting {
 public:
     static void testSorting() {
@@ -95,7 +119,7 @@ public:
             assert(v1 == expected_v1);
             assert(v2 == expected_v2);
             assert(v3 == expected_v3);
-            cout << "Chose passed tests\n";
+            cout << "Chose sort passed tests\n";
         }
         {
             vector<float> v1 = _v1;
@@ -107,7 +131,7 @@ public:
             assert(v1 == expected_v1);
             assert(v2 == expected_v2);
             assert(v3 == expected_v3);
-            cout << "Merge passed tests\n";
+            cout << "Merge sort passed tests\n";
         }
         {
             vector<float> v1 = _v1;
@@ -120,6 +144,18 @@ public:
             assert(v2 == expected_v2);
             assert(v3 == expected_v3);
             cout << "Fast sort passed tests\n";
+        }
+        {
+            vector<float> v1 = _v1;
+            vector<int> v2 = _v2;
+            vector<int> v3 = _v3;
+            sort_count(v1, 100);
+            sort_count(v2, 1000);
+            sort_count(v3, 1000);
+            assert(v1 == expected_v1);
+            assert(v2 == expected_v2);
+            assert(v3 == expected_v3);
+            cout << "Count sort passed tests\n";
         }
     }
 };
