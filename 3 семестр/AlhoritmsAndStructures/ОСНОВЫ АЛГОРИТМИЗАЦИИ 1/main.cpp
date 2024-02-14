@@ -1,5 +1,5 @@
-#include <iostream>
 #include "TestSorting.h"
+#include "TestSearch.h"
 
 int sum2(int n) {
     return (1 + n) * n / 2;
@@ -17,7 +17,9 @@ using namespace std;
 
 int main() {
     TestSorting test;
-    test.testSorting();
+    TestSearch search;
+    //test.testSorting();
+    search.testSearching();
 }
 
 
