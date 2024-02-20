@@ -1,5 +1,6 @@
 #include "TestSorting.h"
 #include "TestSearch.h"
+#include "TestRecursive.h"
 
 int sum2(int n) {
     return (1 + n) * n / 2;
@@ -18,8 +19,10 @@ using namespace std;
 int main() {
     TestSorting test;
     TestSearch search;
+    TestRecursive recursive;
     //test.testSorting();
-    search.testSearching();
+    //search.testSearching();
+    recursive.testRecursive();
 }
 
 

@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 int* bin_search(int* first, int* last, int x) {
     int sz = last - first + 1;
     int l = 0, r = sz;

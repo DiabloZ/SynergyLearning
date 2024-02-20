@@ -7,4 +7,5 @@ add_executable(__1 main.cpp
         TestSorting.cpp
         TestSorting.h
         TestSearch.h
+        TestRecursive.h
 )
