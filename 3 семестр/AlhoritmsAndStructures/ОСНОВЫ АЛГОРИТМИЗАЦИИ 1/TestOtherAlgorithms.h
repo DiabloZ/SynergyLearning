@@ -43,6 +43,28 @@ string getPrimeString(int num) {
     return result;
 }
 
+int nodRec(int x, int y) {
+    if (x == 0 || y == 0) {
+        return x + y;
+    }
+    return nodRec(y % x, x);
+}
+
+int nod(int x, int y) {
+    while (x != 0 && y != 0) {
+        if (x > y) {
+            x %= y;
+        } else {
+            y %= x;
+        }
+    }
+    return x + y;
+}
+
+int nok(int x, int y) {
+    return x * y / nod(x, y);
+}
+
 class TestOtherAlgorithms {
 public:
     static void test() {
@@ -73,6 +95,31 @@ public:
 
             assert(expectedResult == result);
             cout << "getPrimeString passed tests\n";
+        }
+        {
+            int expectedResult = 7;
+            int expectedResultNok = 30;
+
+            int result1 = nod(49, 56);
+            int result2 = nodRec(49, 56);
+            int result3 = nok(6, 10);
+
+            assert(expectedResult == result1);
+            assert(expectedResult == result2);
+            assert(expectedResultNok == result3);
+
+            cout << "nod && nodRec passed tests\n";
+        }
+        {
+            int expectedResult = 3;
+
+            int oranges = 6;
+            int persons = 8;
+            int result1 = oranges / nod(oranges, persons);
+
+            assert(expectedResult == result1);
+
+            cout << "oranges passed tests\n";
         }
 
     }
