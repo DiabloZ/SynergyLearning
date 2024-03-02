@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
+#include <valarray>
 
 using namespace std;
 
@@ -24,21 +25,57 @@ void sieveEratosthenes(int num, vector<int> &result) {
     }
 }
 
+bool isPrime(long x) {
+    for (long i = 2; i * i <= x; ++i) {
+        if (x % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+string getPrimeString(int num) {
+    string result = "Not T-prime\n";
+    long long sq = sqrt(num);
+    if (sq * sq == num && isPrime(sq)){
+        result = "T-prime\n";
+    }
+    return result;
+}
+
 class TestOtherAlgorithms {
 public:
     static void test() {
-        vector<int> expectedResult = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
         {
+            vector<int> expectedResult = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
             vector<int> result;
             sieveEratosthenes(100, result);
             assert(expectedResult == result);
             cout << "sieveEratosthenes passed tests\n";
         }
         {
-            /*int expectedResult = 8;
-            int result = *inter_search(&testArr[0], &testArr[testArr.size() - 1], 7);
-            assert(expectedResult == result);
-            cout << "inter_search passed tests\n";*/
+            int expectedResult1 = 0;
+            int expectedResult2 = 0;
+            int expectedResult3 = 1;
+            bool result1 = isPrime(18);
+            bool result2 = isPrime(20);
+            bool result3 = isPrime(23);
+
+            assert(expectedResult1 == result1);
+            assert(expectedResult2 == result2);
+            assert(expectedResult3 == result3);
+            cout << "isPrime passed tests\n";
         }
+        {
+            string expectedResult = "T-prime\n";
+            int num = 49;
+            string result = getPrimeString(num);
+
+            assert(expectedResult == result);
+            cout << "getPrimeString passed tests\n";
+        }
+
     }
+
+
 };
