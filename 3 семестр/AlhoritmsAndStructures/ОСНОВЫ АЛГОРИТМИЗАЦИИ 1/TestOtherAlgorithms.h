@@ -65,6 +65,18 @@ int nok(int x, int y) {
     return x * y / nod(x, y);
 }
 
+long pow_fast(long x, long y){
+    if (y == 0) {
+        return 1.0;
+    }
+    long t = pow_fast(x, y / 2);
+    if (y % 2 == 0) {
+        return t * t;
+    } else {
+        return t * t * x;
+    }
+}
+
 class TestOtherAlgorithms {
 public:
     static void test() {
@@ -120,6 +132,14 @@ public:
             assert(expectedResult == result1);
 
             cout << "oranges passed tests\n";
+        }
+        {
+            long expectedResult = pow(2, 60);
+            long result = pow_fast(2, 60);
+
+            assert(expectedResult == result);
+
+            cout << "pow_fast passed tests\n";
         }
 
     }
