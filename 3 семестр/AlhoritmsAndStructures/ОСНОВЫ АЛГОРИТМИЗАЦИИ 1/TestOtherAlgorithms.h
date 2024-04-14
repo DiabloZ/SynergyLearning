@@ -142,6 +142,7 @@ public:
             cout << "pow_fast passed tests\n";
         }
 
+
     }
 
 
