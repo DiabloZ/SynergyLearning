@@ -1,14 +1,11 @@
 from django.urls import path
-from django.views.decorators.cache import cache_page
-from django.contrib import admin
-from django.urls import path, include
-from django.conf.urls.static import static
-from django.conf import settings
-from django.views.decorators.cache import cache_page
 
-from .views import PersonHello, AddPerson
+from .views import PersonHello, AddPerson, register, user_login, user_logout
 
 urlpatterns = [
     path('', PersonHello.as_view(), name='Home'),
     path('add_person', AddPerson.as_view(), name='Add_person'),
+    path('register', register, name='Register'),
+    path('login', user_login, name='Login'),
+    path('logout', user_logout, name='Logout'),
 ]
