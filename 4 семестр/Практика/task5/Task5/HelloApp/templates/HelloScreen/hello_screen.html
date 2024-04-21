@@ -1,12 +1,5 @@
 {% extends 'base.html'%}
+{% load person_tags %}
 {% block content %}
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a>Сюда слайдер, чтоб листал сам и всех приветствовал</a>
-
-</body>
-</html>
+{% show_people %}
 {% endblock %}
