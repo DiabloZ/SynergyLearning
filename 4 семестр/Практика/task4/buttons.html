@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        html, body {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 246, 0, 1) 49%, rgba(0, 255, 126, 1) 100%);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: fit-content;
+        }
+
+        .button {
+            width: 100px;
+            font-size: 50px;
+            text-align: center;
+            -webkit-user-select: none;
+            user-select: none;
+            background: rgb(202, 255, 206);
+            background: linear-gradient(130deg, rgb(218, 255, 221) 0%, rgb(253, 253, 255) 100%);
+            border-radius: 5px;
+        }
+
+        .warning-text {
+            visibility: hidden;
+        }
+
+        .counter {
+            background-size: 50px;
+            font-size: 50px;
+            width: 100px;
+            align-content: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 5px;
+            border: 5px solid yellow;
+        }
+    </style>
+    <title>Счётчик</title>
+</head>
+<body>
+
+<div class="button-container">
+    <button class="minus button">-</button>
+    <div class="counter">0</div>
+    <button class="plus button">+</button>
+</div>
+
+<div class="warning-text">вы достигли экстремального значения</div>
+
+<script>
+    let plusButton = document.getElementsByClassName("plus")[0]
+    let minusButton = document.getElementsByClassName("minus")[0]
+    let text = document.getElementsByClassName("counter")[0]
+    let warningText = document.getElementsByClassName("warning-text")[0]
+
+    plusButton.onclick = plus
+    minusButton.onclick = minus
+
+    function plus() {
+        calculateResult(1)
+    }
+
+    function minus() {
+        calculateResult(-1)
+    }
+
+    function calculateResult(value) {
+        let count = Number(text.textContent.toString()) + value
+
+        minusButton.disabled = count === -10
+        plusButton.disabled = count === 10
+
+        if (count === 0) {
+            text.style.borderColor = "red"
+        } else if (count > 0) {
+            text.style.borderColor = "yellow"
+        } else if (count < 0) {
+            text.style.borderColor = "green"
+        }
+
+        if (count >= -10 && count <= 10) {
+            text.textContent = count
+        }
+        if (count === -10 || count === 10) {
+            warningText.style.visibility = "visible"
+        } else {
+            warningText.style.visibility = "hidden"
+        }
+    }
+</script>
+</body>
+</html>
