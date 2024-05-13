@@ -1,27 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from "react";
 
-function App() {
+export default function App(){
+    const [number, setNumber] = useState(0);
+
+    useEffect(() => {
+        setNumber(
+            Math.floor(
+                Math.random() * 1000
+            )
+    )
+    }, []);
     return (
         <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
-                <p>
-                    Hello React!
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-
-
-            </header>
+            <h1>Привет число!</h1>
+            <div>Я число - {number}</div>
         </div>
-    );
+    )
 }
-
-export default App;
