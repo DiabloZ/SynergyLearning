@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SimpleComponent from "./components/SimpleComponent";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <SimpleComponent title="!!!" description="!!Hello React!!"/>
     <App />
   </React.StrictMode>
 );
