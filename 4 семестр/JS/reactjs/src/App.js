@@ -2,6 +2,11 @@ import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from "react";
 
+const styles = {
+    color: "blue",
+    fontSize: "30px"
+}
+
 export default function App(){
     const [number, setNumber] = useState(0);
 
@@ -14,8 +19,8 @@ export default function App(){
     }, []);
     return (
         <div className="App">
-            <h1>Привет число!</h1>
-            <div>Я число - {number}</div>
+            <h1 className={"red big"}>Привет число!</h1>
+            <div style={styles}>Я число - {number}</div>
         </div>
     )
 }
