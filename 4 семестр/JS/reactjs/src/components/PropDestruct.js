@@ -1,6 +1,6 @@
 
 
-const MyComponent = props => {
+const PropDestruct = props => {
     const {prop1, prop2} = props
     return (
         <>
@@ -11,4 +11,4 @@ const MyComponent = props => {
     )
 }
 
-export default MyComponent
+export default PropDestruct
