@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import UserList from "./components/UserList";
 import StateComponent from "./components/StateComponent";
 import PropDestruct from "./components/PropDestruct";
+import UseEffectComponent from "./components/UseEffectComponent";
 
 const styles = {
     color: "blue",
@@ -27,6 +28,7 @@ export default function App() {
             <UserList/>
             <PropDestruct prop1={"props-1"} prop2={"props-2"} />
             <StateComponent prop1={"props-1"} prop2={"props-2"} />
+            <UseEffectComponent/>
         </div>
     )
 }
