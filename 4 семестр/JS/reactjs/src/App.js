@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import UserList from "./components/UserList";
+import MyComponent from "./components/MyComponent";
 
 const styles = {
     color: "blue",
@@ -23,6 +24,7 @@ export default function App() {
             <h1 className={"red big"}>Привет число!</h1>
             <div style={styles}>Я число - {number}</div>
             <UserList/>
+            <MyComponent prop1={"props-1"} prop2={"props-2"} />
         </div>
     )
 }
