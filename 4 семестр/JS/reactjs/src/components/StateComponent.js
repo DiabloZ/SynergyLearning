@@ -1,8 +1,9 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const initialState = () => {
     return -1;
 }
+
 
 const StateComponent = props => {
     const {prop1, prop2} = props
@@ -12,6 +13,25 @@ const StateComponent = props => {
     const handlerSetCounter = () => {
         setCounter(counter + 1)
     }
+
+    useEffect(
+        () => {
+            /*document.body.addEventListener(
+                'mousemove',
+                event => {
+                    setX(event.clientX)
+                }
+            )*/
+        },
+        []
+    )
+
+    const [x, setX] = useState(1)
+
+    const handlerSetMouseMove = (event) => {
+        setX(event.clientX);
+    }
+
     return (
         <div>
             <h1>State component</h1>
@@ -23,6 +43,12 @@ const StateComponent = props => {
             <button
                 onClick={() =>
                     setIsOpened(!isOpened)
+                }
+                onMouseEnter={() =>
+                    setIsOpened(true)
+                }
+                onMouseLeave={() =>
+                    setIsOpened(false)
                 }
             >
                 {isOpened ? "Скрыть строку" : "Показать строку"}
@@ -36,6 +62,10 @@ const StateComponent = props => {
                     <span>Скрытая строка!</span>
                 </div>
             }
+
+            <div onMouseMove={(event) => handlerSetMouseMove(event)}>
+                Координата мыши (X) -> {x}
+            </div>
         </div>
     )
 }
