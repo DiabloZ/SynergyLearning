@@ -4,6 +4,7 @@ import UserList from "./components/UserList";
 import StateComponent from "./components/StateComponent";
 import PropDestruct from "./components/PropDestruct";
 import UseEffectComponent from "./components/UseEffectComponent";
+import PropsRender from "./components/PropsRender";
 
 const styles = {
     color: "blue",
@@ -12,6 +13,7 @@ const styles = {
 
 export default function App() {
     const [number, setNumber] = useState(0);
+    const items = ['item-1', 'item-2', 'item-3', 'item-4']
 
     useEffect(
         () => {
@@ -29,6 +31,7 @@ export default function App() {
             <PropDestruct prop1={"props-1"} prop2={"props-2"} />
             <StateComponent prop1={"props-1"} prop2={"props-2"} />
             <UseEffectComponent/>
+            <PropsRender items={items} propValue={'prop value 2'} />
         </div>
     )
 }
