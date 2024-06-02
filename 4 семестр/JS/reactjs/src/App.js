@@ -5,10 +5,13 @@ import StateComponent from "./components/StateComponent";
 import PropDestruct from "./components/PropDestruct";
 import UseEffectComponent from "./components/UseEffectComponent";
 import PropsRender from "./components/PropsRender";
+import ConditionRender from "./components/ConditionRender";
 
 const styles = {
     color: "blue",
-    fontSize: "30px"
+    fontSize: "30px",
+    display: "flex",
+    justifyContent: "center",
 }
 
 export default function App() {
@@ -25,13 +28,14 @@ export default function App() {
     );
     return (
         <div className="App">
-            <h1 className={"red big"}>Привет число!</h1>
-            <div style={styles}>Я число - {number}</div>
-            <UserList/>
-            <PropDestruct prop1={"props-1"} prop2={"props-2"} />
-            <StateComponent prop1={"props-1"} prop2={"props-2"} />
+            <ConditionRender isLoggedIn={false} text2={"someText"}/>
+            <PropsRender items={items} propValue={'prop value 2'}/>
             <UseEffectComponent/>
-            <PropsRender items={items} propValue={'prop value 2'} />
+            <StateComponent prop1={"props-1"} prop2={"props-2"}/>
+            <PropDestruct prop1={"props-1"} prop2={"props-2"}/>
+            <UserList/>
+            <div style={styles}>Я число - {number}</div>
+            <h1 className={"red big"}>Привет число!</h1>
         </div>
     )
 }
