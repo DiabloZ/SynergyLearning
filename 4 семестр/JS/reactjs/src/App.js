@@ -7,6 +7,7 @@ import UseEffectComponent from "./components/UseEffectComponent";
 import PropsRender from "./components/PropsRender";
 import ConditionRender from "./components/ConditionRender";
 import ConditionStyles from "./components/ConditionStyles";
+import WindowDocument from "./components/WindowComponent";
 
 const styles = {
     color: "blue",
@@ -29,6 +30,7 @@ export default function App() {
     );
     return (
         <div className="App">
+            <WindowDocument/>
             <ConditionStyles disabled = {true} active = {true} label = {"Условный рендеринг"}/>
             <ConditionRender isLoggedIn={false} text2={"someText"}/>
             <PropsRender items={items} propValue={'prop value 2'}/>
