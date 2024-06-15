@@ -1,4 +1,4 @@
-import {useCallback, useMemo, useState} from "react";
+import {useCallback, useMemo, useRef, useState} from "react";
 
 const Hooks_2 = () => {
 
@@ -20,12 +20,23 @@ const Hooks_2 = () => {
         [counter]
     )
 
+    const inputRef = useRef(null)
+
+    const handleFocusInput = () => {
+        setCounter(counter + 1)
+        inputRef.current.focus()
+        inputRef.current.value = `Hello world - ${counter}`;
+    }
+
     return (
         <div>
             <p>
                 Hook useMemo ->
             </p>
             <div>
+                <input type="text" ref={inputRef} />
+                <button onClick={() => handleFocusInput()}>Input btn</button>
+
                 <p>Total - {total}</p>
                 <p>Counter - {counter}</p>
                 <button onClick={() => setCounter(counter + 1)}>Increase counter</button>
