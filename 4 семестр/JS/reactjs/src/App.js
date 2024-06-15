@@ -34,7 +34,7 @@ export default function App() {
     );
     return (
         <div className="App">
-            <h1>Hello CodeSandbox</h1>
+            <h1>First react app</h1>
             <div className="router-nav-container">
                 <nav className="navigation-menu">
                     <div className="navigation-menu__container">

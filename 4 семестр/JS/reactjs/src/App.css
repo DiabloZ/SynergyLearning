@@ -45,11 +45,6 @@
   font-size: calc(50px);
 }
 
-.container {
-  border: 1px solid black;
-  height: 300px;
-}
-
 .navigation-menu__container {
   display: flex;
   flex-direction: row;
