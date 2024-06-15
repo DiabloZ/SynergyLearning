@@ -12,6 +12,7 @@ import {Link, Route, Router, Routes} from "react-router-dom";
 import Home from "./Home/Home";
 import About from "./About/About";
 import Contacts from "./Contacts/Contacts";
+import Hooks_2 from "./Hooks_2/Hooks_2";
 
 const styles = {
     color: "blue",
@@ -48,6 +49,9 @@ export default function App() {
                         <div>
                             <Link to="/contacts" className="link">Contacts Page</Link>
                         </div>
+                        <div>
+                            <Link to="/hooks" className="link">Hooks Page</Link>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -56,6 +60,7 @@ export default function App() {
                 <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
                 <Route path="/contacts" element={<Contacts/>} />
+                <Route path="/hooks" element={<Hooks_2/>} />
             </Routes>
 
             {/*<WindowDocument/>*/}
