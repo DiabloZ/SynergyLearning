@@ -13,6 +13,8 @@ import Home from "./Home/Home";
 import About from "./About/About";
 import Contacts from "./Contacts/Contacts";
 import Hooks_2 from "./Hooks_2/Hooks_2";
+import ArrList from "./Array/ArrList";
+import Pokemons from "./Pokemons/Pokemons";
 
 const styles = {
     color: "blue",
@@ -40,17 +42,23 @@ export default function App() {
                 <nav className="navigation-menu">
                     <div className="navigation-menu__container">
                         <div>
-                            <Link to="/" className="link">Home Page</Link>
+                            <Link to="/" className="link">Home</Link>
 
                         </div>
                         <div>
-                            <Link to="/about" className="link">About Page</Link>
+                            <Link to="/about" className="link">About</Link>
                         </div>
                         <div>
-                            <Link to="/contacts" className="link">Contacts Page</Link>
+                            <Link to="/contacts" className="link">Contacts</Link>
                         </div>
                         <div>
-                            <Link to="/hooks" className="link">Hooks Page</Link>
+                            <Link to="/hooks" className="link">Hooks</Link>
+                        </div>
+                        <div>
+                            <Link to="/array" className="link">ArrList</Link>
+                        </div>
+                        <div>
+                            <Link to="/pokemons" className="link">Pokemons</Link>
                         </div>
                     </div>
                 </nav>
@@ -61,6 +69,8 @@ export default function App() {
                 <Route path="/about" element={<About/>} />
                 <Route path="/contacts" element={<Contacts/>} />
                 <Route path="/hooks" element={<Hooks_2/>} />
+                <Route path="/array" element={<ArrList/>} />
+                <Route path="/pokemons" element={<Pokemons/>} />
             </Routes>
 
             {/*<WindowDocument/>*/}
