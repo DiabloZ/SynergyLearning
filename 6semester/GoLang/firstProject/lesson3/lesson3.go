@@ -1,11 +1,11 @@
-package main
+package lesson3
 
 import (
 	car1 "firstProject/lesson3/cars"
 	car2 "firstProject/lesson3/cars/carsv2"
 )
 
-func main() {
+func Main() {
 	//var var1 = test.TestVariable
 	//var var2 = test.TestFunctions()
 	//

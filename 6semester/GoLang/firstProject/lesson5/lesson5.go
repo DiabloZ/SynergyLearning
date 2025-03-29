@@ -1,11 +1,11 @@
-package main
+package lesson5
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func Main() {
 	student := Student2{name: "test", age: 12345}
 	println(student.name, student.age)
 	student.Greet()

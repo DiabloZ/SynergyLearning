@@ -1,11 +1,11 @@
-package main
+package lesson2
 
 import (
 	"container/list"
 	"fmt"
 )
 
-func main() {
+func Main() {
 	//part2()
 	//part3()
 	//part3switch()

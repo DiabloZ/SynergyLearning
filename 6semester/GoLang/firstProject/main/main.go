@@ -1,6 +1,9 @@
 package main
 
 import (
+	"firstProject/lesson2"
+	"firstProject/lesson3"
+	"firstProject/lesson4"
 	"fmt"
 	"runtime"
 	"time"
@@ -9,6 +12,12 @@ import _ "runtime"
 
 func main() {
 	part1()
+
+	lesson2.Main()
+	lesson3.Main()
+	lesson4.Main()
+	lesson4.Main()
+
 }
 
 func part1() {
