@@ -1,6 +1,7 @@
 package main
 
 import (
+	"firstProject/lesson9web"
 	"fmt"
 	"runtime"
 	"time"
@@ -19,6 +20,7 @@ func main() {
 	//lesson8_udp_server.Main()
 	//lesson8http.Main()
 	//lesson8validator.Main()
+	lesson9web.Main()
 }
 
 func part1() {
