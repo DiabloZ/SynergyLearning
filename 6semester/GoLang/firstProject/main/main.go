@@ -1,7 +1,7 @@
 package main
 
 import (
-	"firstProject/lesson10gorutines"
+	"firstProject/lesson11webapp"
 	"fmt"
 	"runtime"
 	"time"
@@ -21,7 +21,8 @@ func main() {
 	//lesson8http.Main()
 	//lesson8validator.Main()
 	//lesson9web.Main()
-	lesson10gorutines.Main()
+	//lesson10gorutines.Main()
+	lesson11webapp.Main()
 }
 
 func part1() {
