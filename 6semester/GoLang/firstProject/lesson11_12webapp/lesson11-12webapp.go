@@ -1,4 +1,4 @@
-package lesson11webapp
+package lesson11_12webapp
 
 import (
 	"database/sql"
@@ -24,6 +24,10 @@ func Main() {
 	mux.HandleFunc("/login", login)
 	mux.HandleFunc("/register", register)
 	mux.HandleFunc("/create_card", createCard)
+
+	fileServer := http.FileServer(http.Dir("static/"))
+	mux.Handle("/static/*", http.StripPrefix("/static/", fileServer))
+
 	err := http.ListenAndServe(":8080", mux)
 	log.Fatal(err)
 }
